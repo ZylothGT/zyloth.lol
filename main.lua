@@ -17,7 +17,10 @@ local UICorner_5 = Instance.new("UICorner")
 local Outline = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
 
---Properties:
+-- Extra:
+local Universal = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZylothGT/zyloth.lol/main/Mods/universal.lua"))
+
+-- Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -129,5 +132,5 @@ PLACEHOLDER.TextColor3 = Color3.fromRGB(0, 0, 0)
 PLACEHOLDER.TextSize = 27.000
 
 PLACEHOLDER.MouseButton1Click:Connect(function()
-    univsersal.handleloadstring("https://raw.githubusercontent.com/Wortexios/CobaltSpy/refs/heads/main/Cobalt")
+    Universal.handleloadstring("https://raw.githubusercontent.com/Wortexios/CobaltSpy/refs/heads/main/Cobalt")
 end)
