@@ -1,3 +1,29 @@
+-- Module Loader:
+
+local function LoadModule(name, url)
+    local success, result = pcall(function()
+        local source = game:HttpGet(url)
+        local compiled, compileError = loadstring(source)
+
+        assert(compiled, compileError or "Compilation failed")
+
+        return compiled()
+    end)
+
+    if not success then
+        warn("[ZYLOTH.LOL] Failed to load " .. name .. ": " .. tostring(result))
+        return nil
+    end
+
+    if type(result) ~= "table" then
+        warn("[ZYLOTH.LOL] " .. name .. " did not return a table!")
+        return nil
+    end
+
+    print("[ZYLOTH.LOL] Loaded " .. name)
+    return result
+end
+
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -18,9 +44,10 @@ local Outline = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
 
 -- Extra:
-local Universal = loadstring(game:HttpGet(
+local Universal = LoadModule(
+    "Universal",
     "https://raw.githubusercontent.com/ZylothGT/zyloth.lol/main/Mods/universal.lua"
-))()
+)
 
 -- Properties:
 
