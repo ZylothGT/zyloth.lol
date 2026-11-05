@@ -18,7 +18,9 @@ local Outline = Instance.new("Frame")
 local UICorner_6 = Instance.new("UICorner")
 
 -- Extra:
-local Universal = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZylothGT/zyloth.lol/main/Mods/universal.lua"))
+local Universal = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/ZylothGT/zyloth.lol/main/Mods/universal.lua"
+))()
 
 -- Properties:
 
@@ -132,5 +134,7 @@ PLACEHOLDER.TextColor3 = Color3.fromRGB(0, 0, 0)
 PLACEHOLDER.TextSize = 27.000
 
 PLACEHOLDER.MouseButton1Click:Connect(function()
-    Universal.handleloadstring("https://raw.githubusercontent.com/Wortexios/CobaltSpy/refs/heads/main/Cobalt")
+    Universal.handleloadstring(
+        "https://raw.githubusercontent.com/Wortexios/CobaltSpy/refs/heads/main/Cobalt"
+    )
 end)
